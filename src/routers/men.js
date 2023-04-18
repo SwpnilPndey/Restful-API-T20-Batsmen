@@ -3,7 +3,6 @@ const router=new express.Router();
 const MensRanking=require("../models/batsmen");
 
 
-
 router.post("/",async(req,res)=> {
     try {
         const addingRecords=new MensRanking(req.body);
