@@ -11,7 +11,7 @@ router.post("/",async(req,res)=> {
         res.status(201).send(saveRecords);
                
     } catch (error) {
-        res.status(400).send(e);        
+        res.status(400).send(error);        
     }
 })
 
@@ -21,7 +21,7 @@ router.get("/",async(req,res)=> {
         const getMens= await MensRanking.find({}).sort({"ranking":1});
         res.send(getMens);             
     } catch (error) {
-        res.status(400).send(e);        
+        res.status(400).send(error);        
     }
 })
 
@@ -31,7 +31,7 @@ router.get("/:id",async(req,res)=> {
         const getMen= await MensRanking.findById({_id:_id});
         res.send(getMen);             
     } catch (error) {
-        res.status(400).send(e);        
+        res.status(400).send(error);        
     }
 })
 
@@ -41,7 +41,7 @@ router.patch("/:id",async(req,res)=> {
         const getMen= await MensRanking.findByIdAndUpdate({_id:_id},req.body,{new:true});
         res.send(getMen);             
     } catch (error) {
-        res.status(500).send(e);        
+        res.status(500).send(error);        
     }
 })
 
@@ -51,7 +51,7 @@ router.delete("/:id",async(req,res)=> {
         const getMen= await MensRanking.findByIdAndDelete({_id:_id});
         res.send(getMen);             
     } catch (error) {
-        res.status(500).send(e);        
+        res.status(500).send(error);        
     }
 })
 
