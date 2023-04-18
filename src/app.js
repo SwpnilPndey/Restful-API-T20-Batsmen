@@ -15,6 +15,14 @@ app.use(express.json());
 app.use(router);
 
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
+
+
+
 app.listen(port,()=>{
     console.log(`Connection is successful to the webserver`);
 })
