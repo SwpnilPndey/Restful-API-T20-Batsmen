@@ -2,10 +2,8 @@ const mongoose=require("mongoose");
 
 require("dotenv").config();
 
-// const mongoConnect="mongodb://localhost:27017/cricket";
-const mongoConnect=process.env.MONGO_URI;
 
-mongoose.connect(mongoConnect,{
+mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser:true,
    }).then(()=>{
     console.log(`Connection to database is successful`);

@@ -1,8 +1,8 @@
 const express=require("express");
 const app=express();
 
-// const port=3000;
-const port=process.env.PORT;
+
+const port=process.env.PORT||3000;
 
 require("./db/conn");
 
@@ -16,5 +16,5 @@ app.use(router);
 
 
 app.listen(port,()=>{
-    console.log(`Connection is successful at ${port} port`);
+    console.log(`Connection is successful to the webserver`);
 })
