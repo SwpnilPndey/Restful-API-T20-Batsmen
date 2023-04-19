@@ -18,12 +18,6 @@ app.use(express.json());
 app.use(router);
 
 
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//     next();
-//   });
-
-
 
 
 
